@@ -3,7 +3,7 @@ body {
     background: #eaeaea;
     font-family: Verdana, Helvetica;
     width: 100%;
-    min-width: 1300px;
+    min-width: 1200px;
     color: #a8a8a8;
     font-size: 14px;
 }
@@ -13,7 +13,7 @@ header {
     background-repeat: repeat;
     background-repeat: repeat;
     height: 128px;
-    min-width: 1300px;
+    min-width: 1200px;
 }
 
 .logo {
@@ -21,9 +21,11 @@ header {
 }
 
 .logo img {
-    margin-top: 44px;
+    margin-top: 50px;
     margin-left: 20px;
+    max-width: 240px;
 }
+
 
 .pages {
     float: left;
@@ -68,8 +70,9 @@ form {
 .logout {
     float: left;
     margin-top: 88px;
-    margin-left: 90px;
+    margin-left: 70px;
 }
+
 #main-area {
     width: 1200px;
     min-height: 850px;
@@ -157,7 +160,7 @@ nav {
 #title, #tab1, #tab2, #tab3, #tab4, #keimeno{
     display: none;
 }
-.title, .metadata, .keimeno, .tab1, .tab2, .tab3, .tab4{
+.title, .metadata, .keimeno, .tab1, .tab2, .tab3, .tab4, .photo, .sub-butt{
     cursor: pointer;
 }
 
