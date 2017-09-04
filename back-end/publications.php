@@ -9,33 +9,17 @@
 
 </head>
 <body>
-	<header>
-		<div class="logo">
-			<a href="index.php"><img src="images/logo.png" alt=""></a>
-		</div>
-		<div class="pages">
-		 <a href="home.html"><img src="images/kentriki_off.png" /></a>
-		 <a href="company.html"><img src="images/etairia_off.png" /></a>
-		 <a href=""><img src="images/dikigoroi_on.png" /></a>
-		 <a href="expertise.html"><img src="images/ekseidikeusi_off.png" /></a>
-		 <a href="publications.html"><img src="images/dimosieuseis_off.png" /></a>
-		</div>
-		<div class="logout">
-			<img src="images/logout_off.png" alt="">
-		</div>
-		<div class="phil">
-			<img src="images/philsek_logo.png" alt="">
-		</div>
-	</header>
+	<?php
+		include 'header.php';
+	?>
 	<div id="main-area">
 		<nav>
 			<img src='images/metadata_on.png' class="metadata">
 			<img src='images/title_off.png' class="title">
-			<img src='images/tabs/lawyers_list_off.png' class="lawyerslist">
+			<img src='images/tabs/dimosieuseis_off.png' class="dimosieuseis">
 		</nav>
 
 		<div id="metadata">
-
 			<div class="section-title">
 				META TITLE - <span> Ο τίτλος της σελίδας για τις μηχανές αναζήτησης</span>
 			</div>
@@ -99,10 +83,9 @@
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 				</div>
 			</div>
-
 		</div> <!-- Title -->
 
-		<div id="lawyerslist" class="textar">
+		<div id="keimeno" class="textar">
 			<!--<div class="description">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 			</div>-->
@@ -122,29 +105,24 @@
 				</div>-->
 			</div>
 
-		</div> 
+		</div> <!-- Keimeno -->
 
-		<div id="photo" class="textar">
-			<!--<div class="description">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-			</div>-->
-
+		<div id="dimosieuseis">
 			<div class="section-title">
-				Το κείμενο της κεντρικής σελίδας
+				Ο τίτλος της σελίδας για τους χρήστες
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20></textarea></div>
-					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20></textarea></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><input name='' placeholder="Test"></div>
+					<div class="english"><img src='images/flag_en.jpg' /><input name='' placeholder="test"></div>
 				</div>
-				<!--<div class="inputs-info">
-				RULES & TIPS <br>
+				<div class="inputs-info">
+				<strong>RULES & TIPS</strong> <br>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit<br><br>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				</div>-->
+				</div>
 			</div>
-
-		</div> 
+		</div> <!-- dimosieuseis -->
 
 		
 

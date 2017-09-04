@@ -85,7 +85,7 @@ $( ".tab1" ).on( "click", function() {
 
   $( "#title" ).css("display","none");
   $(".title").attr("src","images/title_off.png");
-  $( "#metadatametadata" ).css("display","none");
+  $( "#metadata" ).css("display","none");
   $(".metadata").attr("src","images/metadata_off.png");
   $( "#keimeno" ).css("display","none");
   $(".keimeno").attr("src","images/text_off.png");
@@ -107,7 +107,7 @@ $( ".tab2" ).on( "click", function() {
 
   $( "#title" ).css("display","none");
   $(".title").attr("src","images/title_off.png");
-  $( "#metadatametadata" ).css("display","none");
+  $( "#metadata" ).css("display","none");
   $(".metadata").attr("src","images/metadata_off.png");
   $( "#keimeno" ).css("display","none");
   $(".keimeno").attr("src","images/text_off.png");
@@ -131,7 +131,7 @@ $( ".tab3" ).on( "click", function() {
 
   $( "#title" ).css("display","none");
   $(".title").attr("src","images/title_off.png");
-  $( "#metadatametadata" ).css("display","none");
+  $( "#metadata" ).css("display","none");
   $(".metadata").attr("src","images/metadata_off.png");
   $( "#keimeno" ).css("display","none");
   $(".keimeno").attr("src","images/text_off.png");
@@ -155,7 +155,7 @@ $( ".tab4" ).on( "click", function() {
 
   $( "#title" ).css("display","none");
   $(".title").attr("src","images/title_off.png");
-  $( "#metadatametadata" ).css("display","none");
+  $( "#metadata" ).css("display","none");
   $(".metadata").attr("src","images/metadata_off.png");
   $( "#keimeno" ).css("display","none");
   $(".keimeno").attr("src","images/text_off.png");
@@ -179,7 +179,7 @@ $( ".photo" ).on( "click", function() {
 
   $( "#title" ).css("display","none");
   $(".title").attr("src","images/title_off.png");
-  $( "#metadatametadata" ).css("display","none");
+  $( "#metadata" ).css("display","none");
   $(".metadata").attr("src","images/metadata_off.png");
   $( "#keimeno" ).css("display","none");
   $(".keimeno").attr("src","images/text_off.png");
@@ -202,7 +202,7 @@ $( ".exeidikeuseis" ).on( "click", function() {
 
   $( "#title" ).css("display","none");
   $(".title").attr("src","images/title_off.png");
-  $( "#metadatametadata" ).css("display","none");
+  $( "#metadata" ).css("display","none");
   $(".metadata").attr("src","images/metadata_off.png");
   $( "#keimeno" ).css("display","none");
   $(".keimeno").attr("src","images/text_off.png");
@@ -223,7 +223,7 @@ $( ".lawyerslist" ).on( "click", function() {
 
   $( "#title" ).css("display","none");
   $(".title").attr("src","images/title_off.png");
-  $( "#metadatametadata" ).css("display","none");
+  $( "#metadata" ).css("display","none");
   $(".metadata").attr("src","images/metadata_off.png");
   $( "#keimeno" ).css("display","none");
   $(".keimeno").attr("src","images/text_off.png");
@@ -246,4 +246,36 @@ $( ".dimosieuseis" ).on( "click", function() {
   $(".title").attr("src","images/title_off.png");
   $( "#metadatametadata" ).css("display","none");
   $(".metadata").attr("src","images/metadata_off.png");
+});
+
+
+// Save Buttons
+$( "#home_save" ).on( "click", function() {
+  var metatitle_el = $('#metatitle_el').val();
+  var metatitle_en = $('#metatitle_en').val();
+  var metadesc_el = $('#metatitle_en').val();
+  var metadesc_en = $('#metatitle_en').val();
+  var metakey_el = $('#metatitle_en').val();
+  var metakey_en = $('#metatitle_en').val();
+  var keimeno_el = $('#metatitle_en').val();
+  var keimeno_en = $('#metatitle_en').val();
+  var tab1_el = $('#tab1_el').val();
+  var tab1_en = $('#tab1_en').val();
+  var tab2_el = $('#tab2_el').val();
+  var tab2_en = $('#tab2_en').val();
+  var tab3_el = $('#tab3_el').val();
+  var tab3_en = $('#tab3_en').val();
+  var tab4_el = $('#tab4_el').val();
+  var tab4_en = $('#tab4_en').val();
+});
+
+$( "#company_save" ).on( "click", function() {
+  var metatitle_el = $('#metatitle_el').val();
+  var metatitle_en = $('#metatitle_en').val();
+  var metadesc_el = $('#metatitle_en').val();
+  var metadesc_en = $('#metatitle_en').val();
+  var metakey_el = $('#metatitle_en').val();
+  var metakey_en = $('#metatitle_en').val();
+  var keimeno_el = $('#metatitle_en').val();
+  var keimeno_en = $('#metatitle_en').val();
 });

@@ -9,24 +9,9 @@
 
 </head>
 <body>
-	<header>
-		<div class="logo">
-			<a href="index.php"><img src="images/logo.png" alt=""></a>
-		</div>
-		<div class="pages">
-		 <a href="home.html"><img src="images/kentriki_off.png" /></a>
-		 <a href="company.html"><img src="images/etairia_off.png" /></a>
-		 <a href="lawyers.html"><img src="images/dikigoroi_off.png" /></a>
-		 <a href=""><img src="images/ekseidikeusi_on.png" /></a>
-		 <a href="publications.html"><img src="images/dimosieuseis_off.png" /></a>
-		</div>
-		<div class="logout">
-			<img src="images/logout_off.png" alt="">
-		</div>
-		<div class="phil">
-			<img src="images/philsek_logo.png" alt="">
-		</div>
-	</header>
+	<?php
+		include 'header.php';
+	?>
 	<div id="main-area">
 		<nav>
 			<img src='images/metadata_on.png' class="metadata">

@@ -9,24 +9,9 @@
 
 </head>
 <body>
-	<header>
-		<div class="logo">
-			<a href="index.php"><img src="images/logo.png" alt=""></a>
-		</div>
-		<div class="pages">
-		 <a href=""><img src="images/kentriki_on.png" /></a>
-		 <a href="company.html"><img src="images/etairia_off.png" /></a>
-		 <a href="lawyers.html"><img src="images/dikigoroi_off.png" /></a>
-		 <a href="expertise.html"><img src="images/ekseidikeusi_off.png" /></a>
-		 <a href="publications.html"><img src="images/dimosieuseis_off.png" /></a>
-		</div>
-		<div class="logout">
-			<img src="images/logout_off.png" alt="">
-		</div>
-		<div class="phil">
-			<img src="images/philsek_logo.png" alt="">
-		</div>
-	</header>
+	<?php
+		include 'header.php';
+	?>
 	<div id="main-area">
 		<nav>
 			<img src='images/metadata_on.png' class="metadata">
@@ -45,8 +30,8 @@
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><input name='' placeholder="Test"></div>
-					<div class="english"><img src='images/flag_en.jpg' /><input name='' placeholder="test"></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><input name='metatitle_el' id='metatitle_el' placeholder="Meta Title"></div>
+					<div class="english"><img src='images/flag_en.jpg' /><input name='metatitle_en' id='metatitle_en' placeholder="Meta Title"></div>
 				</div>
 				<div class="inputs-info">
 				<strong>RULES & TIPS</strong> <br>
@@ -61,8 +46,8 @@
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><input name='' placeholder="Test"></div>
-					<div class="english"><img src='images/flag_en.jpg' /><input name='' placeholder="test"></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><input name='metadesc_el' id='metadesc_el' placeholder="Meta Description"></div>
+					<div class="english"><img src='images/flag_en.jpg' /><input name='metadesc_en' id='metadesc_en' placeholder="Meta Description"></div>
 				</div>
 				<div class="inputs-info">
 				<strong>RULES & TIPS</strong> <br>
@@ -76,8 +61,8 @@
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><input name='' placeholder="Test"></div>
-					<div class="english"><img src='images/flag_en.jpg' /><input name='' placeholder="test"></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><input name='metakey_el' id='metakey_el' placeholder="Meta Keywords"></div>
+					<div class="english"><img src='images/flag_en.jpg' /><input name='metakey_en' id='metakey_en' placeholder="Meta Keywords"></div>
 				</div>
 				<div class="inputs-info">
 				<strong>RULES & TIPS</strong> <br>
@@ -95,8 +80,8 @@
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><input name='' placeholder="Test"></div>
-					<div class="english"><img src='images/flag_en.jpg' /><input name='' placeholder="test"></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><input name='title_el' id='title_el' placeholder="Title"></div>
+					<div class="english"><img src='images/flag_en.jpg' /><input name='title_en' id='title_en' placeholder="Title"></div>
 				</div>
 				<div class="inputs-info">
 				<strong>RULES & TIPS</strong> <br>
@@ -114,14 +99,9 @@
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20></textarea></div>
-					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20></textarea></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20 name='keimeno_el' id='keimeno_el'></textarea></div>
+					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20 name='keimeno_en' id='keimeno_en'></textarea></div>
 				</div>
-				<!--<div class="inputs-info">
-				RULES & TIPS <br>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit<br><br>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				</div>-->
 			</div>
 
 		</div> <!-- Keimeno -->
@@ -132,8 +112,8 @@
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20></textarea></div>
-					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20></textarea></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20 name='tab1_el' id='tab1_el'></textarea></div>
+					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20 name='tab1_en' id='tab1_en'></textarea></div>
 				</div>
 
 			</div>
@@ -146,8 +126,8 @@
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20></textarea></div>
-					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20></textarea></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20 name='tab2_el' id='tab2_el'></textarea></div>
+					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20 name='tab2_en' id='tab2_en'></textarea></div>
 				</div>
 
 			</div>
@@ -160,8 +140,8 @@
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20></textarea></div>
-					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20></textarea></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20 name='tab3_el' id='tab3_el'></textarea></div>
+					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20 name='tab3_en' id='tab3_en'></textarea></div>
 				</div>
 
 			</div>
@@ -174,8 +154,8 @@
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20></textarea></div>
-					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20></textarea></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20 name='tab4_el' id='tab4_el'></textarea></div>
+					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20 name='tab4_en' id='tab4_en'></textarea></div>
 				</div>
 
 			</div>
@@ -184,7 +164,7 @@
 
 		<div id="photo" class="textar">
 			<div class="section-title">
-				Το κείμενο του τέταρτου tab
+				Φωτογραφία της Κεντρικής Σελίδας
 			</div>
 			<div class="section-form">
 				<div class="inputs">
@@ -196,7 +176,7 @@
 
 		</div> <!-- Tab 4 -->
 
-		<div class="sub-butt">
+		<div class="sub-butt" id="home_save">
 			ΑΠΟΘΗΚΕΥΣΗ
 		</div>
 
