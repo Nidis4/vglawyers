@@ -157,7 +157,7 @@ nav {
 }
 
 
-#title, #tab1, #tab2, #tab3, #tab4, #keimeno, #photo, #lawyerslist{
+#title, #tab1, #tab2, #tab3, #tab4, #keimeno, #photo, #lawyerslist, #lawyer_2, #lawyer_3, #lawyer_4, #lawyer_5, #lawyer_6{
     display: none;
 }
 .title, .metadata, .keimeno, .tab1, .tab2, .tab3, .tab4, .photo, .sub-butt, .lawyerslist{
@@ -196,6 +196,35 @@ nav {
 .lawyer_area {
     background: #eaeaea;
     padding: 15px 20px;
+}
+.two-sections {
+    display: inline-flex;
+}
+
+.lawyer-details .section-title {
+    width: 450px;
+}
+.first-sec {
+    max-width: 510px;
+    float: left;
+}
+.sec-sec {
+    max-width: 510px;
+}
+.lawyer-details .inputs input {
+    min-width: 380px;
+}
+.section-title.expert {
+    width: 960px;
+}
+.section-form.expert {
+    display: inline-flex;
+}
+.section-form.english {
+    margin-bottom: 20px;
+}
+.lawyer_area .actions {
+    margin-bottom: 25px;
 }
 
 

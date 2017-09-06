@@ -61,8 +61,8 @@ $tab4_en = $pageElements['TAB4_EN'];
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><input name='metatitle_el' id='metatitle_el' placeholder="Meta Title"></div>
-					<div class="english"><img src='images/flag_en.jpg' /><input name='metatitle_en' id='metatitle_en' placeholder="Meta Title"></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><input name='metatitle_el' id='metatitle_el' placeholder="Meta Title" value="<?php echo $metatitle_el ?>"></div>
+					<div class="english"><img src='images/flag_en.jpg' /><input name='metatitle_en' id='metatitle_en' placeholder="Meta Title" value="<?php echo $metatitle_en ?>"></div>
 				</div>
 				<div class="inputs-info">
 				<strong>RULES & TIPS</strong> <br>
@@ -77,8 +77,8 @@ $tab4_en = $pageElements['TAB4_EN'];
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><input name='metadesc_el' id='metadesc_el' placeholder="Meta Description"></div>
-					<div class="english"><img src='images/flag_en.jpg' /><input name='metadesc_en' id='metadesc_en' placeholder="Meta Description"></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><input name='metadesc_el' id='metadesc_el' placeholder="Meta Description" value="<?php echo $metadesc_el ?>"></div>
+					<div class="english"><img src='images/flag_en.jpg' /><input name='metadesc_en' id='metadesc_en' placeholder="Meta Description" value="<?php echo $metadesc_en ?>"></div>
 				</div>
 				<div class="inputs-info">
 				<strong>RULES & TIPS</strong> <br>
@@ -92,8 +92,8 @@ $tab4_en = $pageElements['TAB4_EN'];
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><input name='metakey_el' id='metakey_el' placeholder="Meta Keywords"></div>
-					<div class="english"><img src='images/flag_en.jpg' /><input name='metakey_en' id='metakey_en' placeholder="Meta Keywords"></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><input name='metakey_el' id='metakey_el' placeholder="Meta Keywords" value="<?php echo $metakey_el ?>"></div>
+					<div class="english"><img src='images/flag_en.jpg' /><input name='metakey_en' id='metakey_en' placeholder="Meta Keywords" value="<?php echo $metakey_en ?>"></div>
 				</div>
 				<div class="inputs-info">
 				<strong>RULES & TIPS</strong> <br>
@@ -110,8 +110,8 @@ $tab4_en = $pageElements['TAB4_EN'];
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><input name='title_el' id='title_el' placeholder="Title"></div>
-					<div class="english"><img src='images/flag_en.jpg' /><input name='title_en' id='title_en' placeholder="Title"></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><input name='title_el' id='title_el' placeholder="Title" value="<?php echo $title_el ?>"></div>
+					<div class="english"><img src='images/flag_en.jpg' /><input name='title_en' id='title_en' placeholder="Title" value="<?php echo $title_en ?>"></div>
 				</div>
 				<div class="inputs-info">
 				<strong>RULES & TIPS</strong> <br>
@@ -127,18 +127,14 @@ $tab4_en = $pageElements['TAB4_EN'];
 			</div>-->
 
 			<div class="section-title">
-				Το κείμενο της κεντρικής σελίδας
+				Το κεντρικό κείμενο της συγκεκριμένης σελίδας
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20 name='keimeno_el' id='keimeno_el'></textarea></div>
-					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20 name='keimeno_en' id='keimeno_en'></textarea></div>
+					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20 name='keimeno_el' id='keimeno_el'><?php echo $keimeno_el ?></textarea></div>
+					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20 name='keimeno_en' id='keimeno_en'><?php echo $keimeno_en ?></textarea></div>
 				</div>
-				<!--<div class="inputs-info">
-				RULES & TIPS <br>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit<br><br>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				</div>-->
+
 			</div>
 
 		</div> <!-- Keimeno -->

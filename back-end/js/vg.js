@@ -251,7 +251,7 @@ $( ".dimosieuseis" ).on( "click", function() {
 
 $(".lawyers div").click(function(){
     var myClass = $(this).attr("class");
-    alert(myClass);
+    //alert(myClass);
     $( "#lawyer_1" ).css("display","none");
     $(".lawyer_1 img").attr("src","images/tabs/lawyer_1_off.png");
     $( "#lawyer_2" ).css("display","none");
@@ -265,8 +265,28 @@ $(".lawyers div").click(function(){
     $( "#lawyer_6" ).css("display","none");
     $(".lawyer_6 img").attr("src","images/tabs/lawyer_6_off.png");
 
-    $( "#"+myClass ).css("display","none");
+    $( "#"+myClass ).css("display","block");
     $("."+myClass+" img").attr("src","images/tabs/"+myClass+"_on.png");
+}); 
+
+$(".actions img").click(function(){
+    var myClass = $(this).attr("class");
+
+    var parts = myClass.split('_', 2);
+    var lawyer = parts[0];
+    var act = parts[1];
+
+    $( "#"+lawyer+"_metadata" ).css("display","none");
+    $("."+lawyer+"_metadata").attr("src","images/tabs/metadata_off.png");
+    $( "#"+lawyer+"_title" ).css("display","none");
+    $("."+lawyer+"_title").attr("src","images/tabs/title_off.png");
+    $( "#"+lawyer+"_details" ).css("display","none");
+    $("."+lawyer+"_details").attr("src","images/tabs/details_off.png");
+    $( "#"+lawyer+"_cv" ).css("display","none");
+    $("."+lawyer+"_cv").attr("src","images/tabs/cv_off.png");
+
+    $( "#"+myClass ).css("display","block");
+    $("."+myClass).attr("src","images/tabs/"+act+"_on.png");
 }); 
 
 // Save Buttons
@@ -355,7 +375,8 @@ $( "#company_save" ).on( "click", function() {
   });
 });
 
-$( "#lawyers_save" ).on( "click", function() {
+$( ".lawyers_save" ).on( "click", function() {
+  //alert ("Inside");
   var metatitle_el = $('#metatitle_el').val();
   var metatitle_en = $('#metatitle_en').val();
   var metadesc_el = $('#metadesc_el').val();
@@ -462,6 +483,67 @@ $( "#publications_save" ).on( "click", function() {
       tab3_en: "",
       tab4_el: "",
       tab4_en: "" 
+    })
+  .done(function( data ) {
+    alert( data );
+  });
+});
+
+
+$( ".lawyer_save" ).on( "click", function() {
+  var id = $(this).attr('id');
+
+  var lawyer_id = id.substr(id.length - 1);
+
+  var name_el = $("#name_el_"+lawyer_id).val();
+  var name_en = $("#name_en_"+lawyer_id).val();
+  var surname_el = $("#surname_el_"+lawyer_id).val();
+  var surname_en = $("#surname_en_"+lawyer_id).val();
+  var email = $("#email_"+lawyer_id).val();
+  var cv_el = $("#cv_el_"+lawyer_id).val();
+  var cv_en = $("#cv_en_"+lawyer_id).val();
+  var expert1_el = $("#expert1_el_"+lawyer_id).val();
+  var expert1_en = $("#expert1_en_"+lawyer_id).val();
+  var expert2_el = $("#expert2_el_"+lawyer_id).val();
+  var expert2_en = $("#expert2_en_"+lawyer_id).val();
+  var expert3_el = $("#expert3_el_"+lawyer_id).val();
+  var expert3_en = $("#expert3_en_"+lawyer_id).val();
+  var expert4_el = $("#expert4_el_"+lawyer_id).val();
+  var expert4_en = $("#expert4_en_"+lawyer_id).val();
+  var metatitle_el = $("#metatitle_el_"+lawyer_id).val();
+  var metatitle_en = $('#metatitle_en_'+lawyer_id).val();
+  var metadesc_el = $('#metadesc_el_'+lawyer_id).val();
+  var metadesc_en = $('#metadesc_en_'+lawyer_id).val();
+  var metakey_el = $('#metakey_el_'+lawyer_id).val();
+  var metakey_en = $('#metakey_en_'+lawyer_id).val();
+  var title_el = $('#title_el_'+lawyer_id).val();
+  var title_en = $('#title_en_'+lawyer_id).val();
+
+  $.post( "updateLawyer.php", { 
+      id: lawyer_id,
+      name_el: name_el,
+      name_en: name_en,
+      surname_el: surname_el,
+      surname_en: surname_en,
+      email: email,
+      cv_el: cv_el,
+      cv_en: cv_en,
+      expert1_el: expert1_el,
+      expert1_en: expert1_en,
+      expert2_el: expert2_el,
+      expert2_en: expert2_en,
+      expert3_el: expert3_el,
+      expert3_en: expert3_en,
+      expert4_el: expert4_el,
+      expert4_en: expert4_en,
+      metatitle_el: metatitle_el, 
+      metatitle_en: metatitle_en,
+      metadesc_el: metadesc_el,
+      metadesc_en: metadesc_en,
+      metakey_el: metakey_el,
+      metakey_en: metakey_en,
+      title_el: title_el,
+      title_en: title_en
     })
   .done(function( data ) {
     alert( data );

@@ -21,6 +21,16 @@
 
 	}
 
+	function updateLawyer($id, $name_el, $name_en, $surname_el, $surname_en, $email, $cv_el, $cv_en, $expert1_el, $expert1_en, $expert2_el, $expert2_en, $expert3_el, $expert3_en, $expert4_el, $expert4_en, $metatitle_el, $metatitle_en, $metadesc_el, $metadesc_en, $metakey_el, $metakey_en, $title_el, $title_en){
+		$connect = initDB();
+		mysqli_query($connect,"UPDATE `LAWYERS` SET `NAME_EL`='$name_el',`NAME_EN`='$name_en',`SURNAME_EL`='$surname_el',`SURNAME_EN`='$surname_en',`EMAIL`='$email',`CV_EL`='$cv_el',`CV_EN`='$cv_en',`EXPERT1_EL`='expert1_el',`EXPERT1_EN`='$expert1_en',`EXPERT2_EL`='$expert2_el',`EXPERT2_EN`='$expert2_en',`EXPERT3_EL`='$expert3_el',`EXPERT3_EN`='$expert3_en',`EXPERT4_EL`='$expert4_el',`EXPERT4_EN`='$expert4_en',`METATITLE_EL`='$metatitle_el',`METATITLE_EN`='$metatitle_en',`METADESC_EL`='$metadesc_el',`METADESC_EN`='$metadesc_en',`METAKEY_EL`='$metakey_el',`METAKEY_EN`='$metakey_en',`TITLE_EL`='$title_el',`TITLE_EN`='$title_en' WHERE `LAWYER_ID` = '$id' ");
+	}
+
+	function getLawyers(){
+		$connect = initDB();
+		$result = mysqli_query($connect, "SELECT * FROM `LAWYERS`");
+		return $result;
+	}
 
 
 
@@ -59,7 +69,7 @@
 
 	function updateSlideById($slide_id, $title, $caption, $button, $display, $img, $link, $styling ){
 		$connect = initDB();
-		//echo "UPDATE `serv_headerinfo` SET `NAME`='".$name."',`DEALER_CODE`='".$code."',`EKTHESI_TEL`='".$ekthesi."',`SYNERGY_TEL`='".$synergy."',`PAGE_FIR`='".$fir."',`PAGE_FIR_LINK`='".$firlink."',`PAGE_SEC`='".$sec."',`PAGE_SEC_LINK`='".$seclink."' WHERE `INFO_ID` =".$dealer_id;
+		echo "UPDATE `serv_headerinfo` SET `NAME`='".$name."',`DEALER_CODE`='".$code."',`EKTHESI_TEL`='".$ekthesi."',`SYNERGY_TEL`='".$synergy."',`PAGE_FIR`='".$fir."',`PAGE_FIR_LINK`='".$firlink."',`PAGE_SEC`='".$sec."',`PAGE_SEC_LINK`='".$seclink."' WHERE `INFO_ID` =".$dealer_id;
 		mysql_query("UPDATE `serv_sliders` SET `TITLE`='".$title."',`CAPTION`='".$caption."',`BUTTON`='".$button."',`DISPLAY`='".$display."',`IMG_LOC`='".$img."',`LINK_LOC`='".$link."',`STYLING`='".$styling."' WHERE `SLIDER_ID` =".$slide_id ,$connect);
 	}
 
