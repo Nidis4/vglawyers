@@ -40,7 +40,7 @@ $tab4_en = $pageElements['TAB4_EN'];
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<title></title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css?version=18">
 
 </head>
 <body>
@@ -197,16 +197,30 @@ $tab4_en = $pageElements['TAB4_EN'];
 
 		</div> <!-- Tab 4 -->
 
-		<div id="photo" class="textar">
+		<div id="photo">
 			<div class="section-title">
 				Φωτογραφία της Κεντρικής Σελίδας
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20></textarea></div>
-					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20></textarea></div>
+					<div class="selected-image">
+						<?php
+							$image = getImageLoc('homepage_main');
+						?>
+						<img src='<?php echo $image?>' />
+					</div>
+					<a href='uploadImage.php?pageloc=homepage_main'  onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=300,toolbar=1,resizable=0'); return false;">
+					<div class="buttons">
+						ΑΛΛΑΓΗ ΦΩΤΟΓΡΑΦΙΑΣ
+					</div>
+					</a>
 				</div>
-
+				<div class="inputs-info">
+				<strong>RULES & TIPS</strong> <br>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit<br><br>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</div>
 			</div>
 
 		</div> <!-- Tab 4 -->

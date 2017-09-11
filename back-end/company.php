@@ -139,16 +139,105 @@ $tab4_en = $pageElements['TAB4_EN'];
 
 		</div> 
 
-		<div id="photo" class="textar">
+		<div id="photo" class="multiple" >
 			<div class="section-title">
-				Το κείμενο της κεντρικής σελίδας
+				Φωτογραφίες της εταιρίας
 			</div>
 			<div class="section-form">
 				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><textarea col=20></textarea></div>
-					<div class="english"><img src='images/flag_en.jpg' /><textarea col=20></textarea></div>
+					<div class="selected-image">
+						<?php
+							$image = getImageLoc('company_image1');
+						?>
+						<img src='<?php echo $image?>' />
+					</div>
+					<a href='uploadImage.php?pageloc=company_image1'  onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=300,toolbar=1,resizable=0'); return false;">
+					<div class="buttons">
+						ΑΛΛΑΓΗ ΦΩΤΟΓΡΑΦΙΑΣ
+					</div>
+					</a>
 				</div>
-
+			</div>
+			<div class="section-form">
+				<div class="inputs">
+					<div class="selected-image">
+						<?php
+							$image = getImageLoc('company_image2');
+						?>
+						<img src='<?php echo $image?>' />
+					</div>
+					<a href='uploadImage.php?pageloc=company_image2'  onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=300,toolbar=1,resizable=0'); return false;">
+					<div class="buttons">
+						ΑΛΛΑΓΗ ΦΩΤΟΓΡΑΦΙΑΣ
+					</div>
+					</a>
+				</div>
+			</div>
+			<div class="section-form">
+				<div class="inputs">
+					<div class="selected-image">
+						<?php
+							$image = getImageLoc('company_image3');
+						?>
+						<img src='<?php echo $image?>' />
+					</div>
+					<a href='uploadImage.php?pageloc=company_image3'  onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=300,toolbar=1,resizable=0'); return false;">
+					<div class="buttons">
+						ΑΛΛΑΓΗ ΦΩΤΟΓΡΑΦΙΑΣ
+					</div>
+					</a>
+				</div>
+			</div>
+			<div class="section-form">
+				<div class="inputs">
+					<div class="selected-image">
+						<?php
+							$image = getImageLoc('company_image4');
+						?>
+						<img src='<?php echo $image?>' />
+					</div>
+					<a href='uploadImage.php?pageloc=company_image4'  onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=300,toolbar=1,resizable=0'); return false;">
+					<div class="buttons">
+						ΑΛΛΑΓΗ ΦΩΤΟΓΡΑΦΙΑΣ
+					</div>
+					</a>
+				</div>
+			</div>
+			<div class="section-form">
+				<div class="inputs">
+					<div class="selected-image">
+						<?php
+							$image = getImageLoc('company_image5');
+						?>
+						<img src='<?php echo $image?>' />
+					</div>
+					<a href='uploadImage.php?pageloc=company_image5'  onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=300,toolbar=1,resizable=0'); return false;">
+					<div class="buttons">
+						ΑΛΛΑΓΗ ΦΩΤΟΓΡΑΦΙΑΣ
+					</div>
+					</a>
+				</div>
+			</div>
+			<div class="section-form">
+				<div class="inputs">
+					<div class="selected-image">
+						<?php
+							$image = getImageLoc('company_image6');
+						?>
+						<img src='<?php echo $image?>' />
+					</div>
+					<a href='uploadImage.php?pageloc=company_image6'  onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=300,toolbar=1,resizable=0'); return false;">
+					<div class="buttons">
+						ΑΛΛΑΓΗ ΦΩΤΟΓΡΑΦΙΑΣ
+					</div>
+					</a>
+				</div>
 			</div>
 
 		</div> 

@@ -31,7 +31,19 @@ $tab3_en = $pageElements['TAB3_EN'];
 $tab4_el = $pageElements['TAB4_EL'];
 $tab4_en = $pageElements['TAB4_EN'];
 
+$publications = getPublications();
+$publications_num = mysqli_num_rows($publications);
 
+$i=0;
+while ($publication = mysqli_fetch_array($publications,MYSQLI_ASSOC)) {
+	$i++;
+	$lmedia_el[$i] = $publication['MEDIA_EL'];
+	$lmedia_en[$i] = $publication['MEDIA_EN'];
+	$llawyerid[$i] = $publication['LAWYER_ID'];
+	$lpdf[$i] = $publication['PDF'];
+	$ltitle_el[$i] = $publication['TITLE_EL'];
+	$ltitle_en[$i] = $publication['TITLE_EN'];
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -40,7 +52,7 @@ $tab4_en = $pageElements['TAB4_EN'];
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<title></title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css?version=15">
 
 </head>
 <body>
@@ -124,18 +136,77 @@ $tab4_en = $pageElements['TAB4_EN'];
 
 		<div id="dimosieuseis">
 			<div class="section-title">
-				Ο τίτλος της σελίδας για τους χρήστες
+				Δημοσιεύσεις
 			</div>
-			<div class="section-form">
-				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><input name='' placeholder="Test"></div>
-					<div class="english"><img src='images/flag_en.jpg' /><input name='' placeholder="test"></div>
-				</div>
-				<div class="inputs-info">
-				<strong>RULES & TIPS</strong> <br>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit<br><br>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				</div>
+			<div class="section-form publicationList">
+			<?php
+				$publications = getPublications();
+
+				while ($publication = mysqli_fetch_array($publications,MYSQLI_ASSOC)) {
+					echo "<div class='publ_".$publication['ID']."'>";
+					echo $publication['TITLE_EL'];
+					echo "</div>";
+				}
+			?>
+			</div>
+
+			<div id="editSection">
+			<?php
+				$publications = getPublications();
+				$i=0;
+					while ($publication = mysqli_fetch_array($publications,MYSQLI_ASSOC)) {
+					$i++;
+					echo "<div class='publicationEdit' id='publ_".$publication['ID']."'>";
+					echo "<div class='two-sections'>";
+					echo "<div class='first-sec'>";
+					echo "<div class='section-title'>Ο τίτλος της συγκεκριμένης εξειδίκευσης</div>";
+					echo "<div class='section-form'>";
+					echo "<div class='inputs'>";
+					echo "<div class='greek'><img src='images/flag_el.jpg' /><input name='title_el_".$i."' id='title_el_".$i."' placeholder='Τίτλος' value='$ltitle_el[$i]'></div>";
+					echo "<div class='english'><img src='images/flag_en.jpg' /><input name='title_en_".$i."' id='title_en_".$i."' placeholder='Title' value='$ltitle_en[$i]'></div>";
+					echo "</div>"; // inputs
+					echo "</div>"; // section
+					echo "</div>"; // first-sec
+					echo "<div class='sec-sec'>";
+					echo "<div class='section-title'>Που δημοσιεύθηκε</div>";
+					echo "<div class='section-form'>";
+					echo "<div class='inputs'>";
+					echo "<div class='greek'><img src='images/flag_el.jpg' /><input name='media_el_".$i."' id='media_el_".$i."' placeholder='' value='$lmedia_el[$i]'></div>";
+					echo "<div class='english'><img src='images/flag_en.jpg' /><input name='media_en_".$i."' id='media_en_".$i."' placeholder='' value='$lmedia_en[$i]'></div>";
+					echo "</div>"; //inputs
+					echo "</div>"; //section
+					echo "</div>"; // sec-sec
+					echo "</div>"; // two-sections
+
+					echo "<div class='two-sections'>";
+					echo "<div class='first-sec'>";
+					echo "<div class='section-title'>Δικηγόρος</div>";
+					echo "<div class='section-form'>";
+					echo "<div class='inputs'>";
+					echo "<div class='greek'>";
+					echo "<select>";
+					$lawyers = getLawyers();
+					while ($lawyer = mysqli_fetch_array($lawyers,MYSQLI_ASSOC)) {
+						echo "<option value='".$lawyer['LAWYER_ID']."'>".$lawyer['SURNAME_EL']." ".$lawyer['NAME_EL']."</option>";
+					}
+					echo "</select>";
+					echo "</div>";
+					echo "</div>"; // inputs
+					echo "</div>"; // section
+					echo "</div>"; // first-sec
+					echo "<div class='sec-sec'>";
+					echo "<div class='section-title'>Ψηφιακό αρχείο (pdf)</div>";
+					echo "<div class='section-form'>";
+					echo "<div class='inputs'>";
+					echo "<div class='greek'>ΠΡΟΣΘΗΚΗ ΑΡΧΕΙΟΥ</div>";
+					echo "</div>"; //inputs
+					echo "</div>"; //section
+					echo "</div>"; // sec-sec
+					echo "</div>"; // two-sections
+
+					echo "</div>"; //publicationEdit
+				}
+			?>		
 			</div>
 		</div> <!-- dimosieuseis -->
 

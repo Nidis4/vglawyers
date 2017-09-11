@@ -32,7 +32,6 @@ $tab4_el = $pageElements['TAB4_EL'];
 $tab4_en = $pageElements['TAB4_EN'];
 
 $lawyers = getLawyers();
-
 $lawyers_num = mysqli_num_rows($lawyers);
 
 
@@ -73,7 +72,7 @@ while ($lawyer = mysqli_fetch_array($lawyers,MYSQLI_ASSOC)) {
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<title></title>
-	<link rel="stylesheet" href="css/style.css?version=4">
+	<link rel="stylesheet" href="css/style.css?version=20">
 
 </head>
 <body>
@@ -244,6 +243,9 @@ while ($lawyer = mysqli_fetch_array($lawyers,MYSQLI_ASSOC)) {
 					echo "</div>";
 
 					echo "<div id='lawyer".$i."_details' class='lawyer-details'>";
+
+					echo "<div class='two-sections'>";
+					echo "<div class='first-sec'>";
 					echo "<div class='section-title'>Το όνομα του συγκεκριμένου δικηγόρου</div>";
 					echo "<div class='section-form'>";
 					echo "<div class='inputs'>";
@@ -251,6 +253,25 @@ while ($lawyer = mysqli_fetch_array($lawyers,MYSQLI_ASSOC)) {
 					echo "<div class='english'><img src='images/flag_en.jpg' /><input name='name_en_".$i."' id='name_en_".$i."' placeholder='Name' value='$lname_en[$i]'></div>";
 					echo "</div>";
 					echo "</div>";
+					echo "</div>";
+					echo "<div class='sec-sec'>";
+					echo "<div class='section-title'>Φωτογραφία του συγκεκριμένου δικηγόρου</div>";
+					echo "<div class='section-form'>";
+					echo "<div class='inputs image'>";
+					echo "<div class='selected-image'>";
+					$imageLoc = 'lawyers_lawyer'.$i;
+					$image = getImageLoc($imageLoc);
+					echo "<img src='$image' />";
+					echo "</div>";
+					echo "<a href='uploadImage.php?pageloc=company_image4'  onclick=\"window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=300,toolbar=1,resizable=0'); return false;\">";
+					echo "<div class='buttons'>ΑΛΛΑΓΗ ΦΩΤΟΓΡΑΦΙΑΣ</div>";
+					echo "</a>";
+					echo "</div>";
+					echo "</div>";
+					echo "</div>";
+					echo "</div>";
+
 					echo "<div class='two-sections'>";
 					echo "<div class='first-sec'>";
 					echo "<div class='section-title'>Το επίθετο του συγκεκριμένου δικηγόρου</div>";

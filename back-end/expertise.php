@@ -31,7 +31,25 @@ $tab3_en = $pageElements['TAB3_EN'];
 $tab4_el = $pageElements['TAB4_EL'];
 $tab4_en = $pageElements['TAB4_EN'];
 
+$expertises = getExpertises();
+$expertises_num = mysqli_num_rows($expertises);
 
+$i=0;
+while ($expertise = mysqli_fetch_array($expertises,MYSQLI_ASSOC)) {
+	$i++;
+	$lkeimeno_el[$i] = $expertise['KEIMENO_EL'];
+	$lkeimeno_en[$i] = $expertise['KEIMENO_EN'];
+	$lexplain_el[$i] = $expertise['EXPLAIN_EL'];
+	$lexplain_en[$i] = $expertise['EXPLAIN_EN'];
+	$lmetatitle_el[$i] = $expertise['METATITLE_EL'];
+	$lmetatitle_en[$i] = $expertise['METATITLE_EN'];
+	$lmetadesc_el[$i] = $expertise['METADESC_EL'];
+	$lmetadesc_en[$i] = $expertise['METADESC_EN'];
+	$lmetakey_el[$i] = $expertise['METAKEY_EL'];
+	$lmetakey_en[$i] = $expertise['METAKEY_EN'];
+	$ltitle_el[$i] = $expertise['TITLE_EL'];
+	$ltitle_en[$i] = $expertise['TITLE_EN'];
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -40,7 +58,7 @@ $tab4_en = $pageElements['TAB4_EN'];
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<title></title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css?version=14">
 
 </head>
 <body>
@@ -102,6 +120,9 @@ $tab4_en = $pageElements['TAB4_EN'];
 				</div>
 			</div>
 
+			<div class="sub-butt expertises_save">
+				ΑΠΟΘΗΚΕΥΣΗ
+			</div>
 		</div> <!-- Meta Data -->
 
 		<div id="title">
@@ -118,6 +139,9 @@ $tab4_en = $pageElements['TAB4_EN'];
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit<br><br>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 				</div>
+			</div>
+			<div class="sub-butt expertises_save">
+				ΑΠΟΘΗΚΕΥΣΗ
 			</div>
 		</div> <!-- Title -->
 
@@ -136,31 +160,123 @@ $tab4_en = $pageElements['TAB4_EN'];
 				</div>
 
 			</div>
-
+			<div class="sub-butt expertises_save">
+				ΑΠΟΘΗΚΕΥΣΗ
+			</div>
 		</div> <!-- Keimeno -->
 
 		<div id="exeidikeuseis">
-			<div class="section-title">
-				Ο τίτλος της σελίδας για τους χρήστες
+			<div class="expertises">
+				<?php
+					for ($i = 1; $i <= $expertises_num; $i++) {
+					    echo "<div class='expertise_".$i."'>";
+					    if ($i==1){
+					    	echo "<img src='images/tabs/expertise_".$i."_on.png' />";
+					    }
+					    else{
+					    	echo "<img src='images/tabs/expertise_".$i."_off.png' />";
+					    }
+						
+						echo "</div>";
+					}
+				?>
 			</div>
-			<div class="section-form">
-				<div class="inputs">
-					<div class="greek"><img src='images/flag_el.jpg' /><input name='' placeholder="Test"></div>
-					<div class="english"><img src='images/flag_en.jpg' /><input name='' placeholder="test"></div>
-				</div>
-				<div class="inputs-info">
-				<strong>RULES & TIPS</strong> <br>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit<br><br>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				</div>
-			</div>
+
+			<?php
+				$i=0;
+				$expertises = getExpertises();
+
+				while ($expertise = mysqli_fetch_array($expertises,MYSQLI_ASSOC)) {
+					$i++;
+					echo "<div id='expertise_".$i."' class='expertise_area'>";
+					echo "<div class='actions'>";
+					echo "<img src='images/tabs/metadata_on.png' class='expertise".$i."_metadata'/>";
+					echo "<img src='images/tabs/details_off.png' class='expertise".$i."_details'/>";
+					echo "</div>";
+
+					echo "<div id='expertise".$i."_metadata'>";
+					echo "<div class='section-title'>";
+					echo "META TITLE - <span> Ο τίτλος της σελίδας για τις μηχανές αναζήτησης</span>";
+					echo "</div>";
+					echo "<div class='section-form'>";
+					echo "<div class='inputs'>";
+					echo "<div class='greek'><img src='images/flag_el.jpg' /><input name='metatitle_el_".$i."' id='metatitle_el_".$i."' placeholder='Meta Title' value='$lmetatitle_el[$i]' ></div>";
+					echo "<div class='english'><img src='images/flag_en.jpg' /><input name='metatitle_en_".$i."' id='metatitle_en_".$i."' placeholder='Meta Title' value='$lmetatitle_en[$i]' ></div>";
+					echo "</div>";
+					echo "<div class='inputs-info'>";
+					echo "<strong>RULES & TIPS</strong> <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+					echo "</div>";
+					echo "</div>";
+
+					echo "<div class='section-title'>";
+					echo "META DESCRIPTION - <span> Η περιγραφή της σελίδας για τις μηχανές αναζήτησης</span>";
+					echo "</div>";
+					echo "<div class='section-form'>";
+					echo "<div class='inputs'>";
+					echo "<div class='greek'><img src='images/flag_el.jpg' /><input name='metadesc_el_".$i."' id='metadesc_el_".$i."' placeholder='Meta Title' value='$lmetadesc_el[$i]' ></div>";
+					echo "<div class='english'><img src='images/flag_en.jpg' /><input name='metadesc_en_".$i."' id='metadesc_en_".$i."' placeholder='Meta Title' value='$lmetadesc_en[$i]' ></div>";
+					echo "</div>";
+					echo "<div class='inputs-info'>";
+					echo "<strong>RULES & TIPS</strong> <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+					echo "</div>";
+					echo "</div>";
+
+					echo "<div class='section-title'>META KEYWORDS - <span> Οι λέξεις κλειδιά της σελίδας για τις μηχανές αναζήτησης</span></div>";
+					echo "<div class='section-form'>";
+					echo "<div class='inputs'>";
+					echo "<div class='greek'><img src='images/flag_el.jpg' /><input name='metakey_el_".$i."' id='metakey_el_".$i."' placeholder='Meta Title' value='$lmetakey_el[$i]' ></div>";
+					echo "<div class='english'><img src='images/flag_en.jpg' /><input name='metakey_en_".$i."' id='metakey_en_".$i."' placeholder='Meta Title' value='$lmetakey_en[$i]' ></div>";
+					echo "</div>";
+					echo "<div class='inputs-info'>";
+					echo "<strong>RULES & TIPS</strong> <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+					echo "</div>";
+					echo "</div>";
+					echo "</div>";
+
+					echo "<div id='expertise".$i."_details' class='expertise-details'>";
+					
+					echo "<div class='two-sections'>";
+					echo "<div class='first-sec'>";
+					echo "<div class='section-title'>Ο τίτλος της συγκεκριμένης εξειδίκευσης</div>";
+					echo "<div class='section-form'>";
+					echo "<div class='inputs'>";
+					echo "<div class='greek'><img src='images/flag_el.jpg' /><input name='title_el_".$i."' id='title_el_".$i."' placeholder='Τίτλος' value='$ltitle_el[$i]'></div>";
+					echo "<div class='english'><img src='images/flag_en.jpg' /><input name='title_en_".$i."' id='title_en_".$i."' placeholder='Title' value='$ltitle_en[$i]'></div>";
+					echo "</div>";
+					echo "</div>";
+					echo "</div>";
+					echo "<div class='sec-sec'>";
+					echo "<div class='section-title'>H επεξήγηση της συγκεκριμένης εξειδίκευσης</div>";
+					echo "<div class='section-form'>";
+					echo "<div class='inputs'>";
+					echo "<div class='greek'><img src='images/flag_el.jpg' /><input name='explain_el_".$i."' id='explain_el_".$i."' placeholder='Επεξήγηση' value='$lexplain_el[$i]'></div>";
+					echo "<div class='english'><img src='images/flag_en.jpg' /><input name='explain_en_".$i."' id='explain_en_".$i."' placeholder='Expanation' value='$lexplain_en[$i]'></div>";
+					echo "</div>";
+					echo "</div>";
+					echo "</div>";
+					echo "</div>";
+
+					echo "<div class='textar'>";
+					echo "<div class='section-title expert'>Πεδία εξιδίκευσης του συγκεκριμένου δικηγόρου</div>";
+					echo "<div class='section-form'>";
+					echo "<div class='inputs'>";
+					echo "<div class='greek'><img src='images/flag_el.jpg' /><textarea col=20 name='keimeno_el' id='keimeno_el'>$lkeimeno_el[$i]</textarea></div>";
+					echo "<div class='english'><img src='images/flag_en.jpg' /><textarea col=20 name='keimeno_en' id='keimeno_en'>$lkeimeno_en[$i]</textarea></div>";
+					echo "</div>";
+					echo "</div>";
+					echo "</div>";
+
+					echo "</div>";
+
+					echo "<div class='sub-butt expertise_save' id='save_".$i."'>ΑΠΟΘΗΚΕΥΣΗ</div>";
+
+					echo "</div>";
+				}
+
+			?>
+
 		</div> <!-- exeidikeuseis -->
 
-		
-
-		<div class="sub-butt" id="expertise_save">
-			ΑΠΟΘΗΚΕΥΣΗ
-		</div>
 
 
 	</div>

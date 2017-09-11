@@ -244,10 +244,33 @@ $( ".dimosieuseis" ).on( "click", function() {
 
   $( "#title" ).css("display","none");
   $(".title").attr("src","images/title_off.png");
-  $( "#metadatametadata" ).css("display","none");
+  $( "#metadata" ).css("display","none");
   $(".metadata").attr("src","images/metadata_off.png");
 });
 
+$(".expertises div").click(function(){
+    var myClass = $(this).attr("class");
+    //alert(myClass);
+    $( "#expertise_1" ).css("display","none");
+    $(".expertise_1 img").attr("src","images/tabs/expertise_1_off.png");
+    $( "#expertise_2" ).css("display","none");
+    $(".expertise_2 img").attr("src","images/tabs/expertise_2_off.png");
+    $( "#expertise_3" ).css("display","none");
+    $(".expertise_3 img").attr("src","images/tabs/expertise_3_off.png");
+    $( "#expertise_4" ).css("display","none");
+    $(".expertise_4 img").attr("src","images/tabs/expertise_4_off.png");
+    $( "#expertise_5" ).css("display","none");
+    $(".expertise_5 img").attr("src","images/tabs/expertise_5_off.png");
+    $( "#expertise_6" ).css("display","none");
+    $(".expertise_6 img").attr("src","images/tabs/expertise_6_off.png");
+    $( "#expertise_7" ).css("display","none");
+    $(".expertise_7 img").attr("src","images/tabs/expertise_7_off.png");
+    $( "#expertise_8" ).css("display","none");
+    $(".expertise_8 img").attr("src","images/tabs/expertise_8_off.png");
+
+    $( "#"+myClass ).css("display","block");
+    $("."+myClass+" img").attr("src","images/tabs/"+myClass+"_on.png");
+}); 
 
 $(".lawyers div").click(function(){
     var myClass = $(this).attr("class");
@@ -267,11 +290,20 @@ $(".lawyers div").click(function(){
 
     $( "#"+myClass ).css("display","block");
     $("."+myClass+" img").attr("src","images/tabs/"+myClass+"_on.png");
+});
+
+$(".publicationList div").click(function(){
+    var myClass = $(this).attr("class");
+    //alert(myClass);
+
+    $( ".publicationEdit" ).css("display","none");
+    $( "#"+myClass ).css("display","block");
+
 }); 
 
 $(".actions img").click(function(){
     var myClass = $(this).attr("class");
-
+    //alert(myClass);
     var parts = myClass.split('_', 2);
     var lawyer = parts[0];
     var act = parts[1];
@@ -412,7 +444,7 @@ $( ".lawyers_save" ).on( "click", function() {
   });
 });
 
-$( "#expertise_save" ).on( "click", function() {
+$( ".expertises_save" ).on( "click", function() {
   var metatitle_el = $('#metatitle_el').val();
   var metatitle_en = $('#metatitle_en').val();
   var metadesc_el = $('#metadesc_el').val();
@@ -536,6 +568,45 @@ $( ".lawyer_save" ).on( "click", function() {
       expert3_en: expert3_en,
       expert4_el: expert4_el,
       expert4_en: expert4_en,
+      metatitle_el: metatitle_el, 
+      metatitle_en: metatitle_en,
+      metadesc_el: metadesc_el,
+      metadesc_en: metadesc_en,
+      metakey_el: metakey_el,
+      metakey_en: metakey_en,
+      title_el: title_el,
+      title_en: title_en
+    })
+  .done(function( data ) {
+    alert( data );
+  });
+});
+
+
+$( ".expertise_save" ).on( "click", function() {
+  var id = $(this).attr('id');
+
+  var expertise_id = id.substr(id.length - 1);
+
+  var explain_el = $("#explain_el_"+expertise_id).val();
+  var explain_en = $("#explain_en_"+expertise_id).val();
+  var keimeno_el = $("#keimeno_el_"+expertise_id).val();
+  var keimeno_en = $("#keimeno_en_"+expertise_id).val();
+  var metatitle_el = $("#metatitle_el_"+expertise_id).val();
+  var metatitle_en = $('#metatitle_en_'+expertise_id).val();
+  var metadesc_el = $('#metadesc_el_'+expertise_id).val();
+  var metadesc_en = $('#metadesc_en_'+expertise_id).val();
+  var metakey_el = $('#metakey_el_'+expertise_id).val();
+  var metakey_en = $('#metakey_en_'+expertise_id).val();
+  var title_el = $('#title_el_'+expertise_id).val();
+  var title_en = $('#title_en_'+expertise_id).val();
+
+  $.post( "updateExpertise.php", { 
+      id: expertise_id,
+      explain_el: explain_el,
+      explain_en: explain_en,
+      keimeno_el: keimeno_el,
+      keimeno_en: keimeno_en,
       metatitle_el: metatitle_el, 
       metatitle_en: metatitle_en,
       metadesc_el: metadesc_el,

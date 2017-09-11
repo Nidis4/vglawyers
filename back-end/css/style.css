@@ -7,6 +7,9 @@ body {
     color: #a8a8a8;
     font-size: 14px;
 }
+body.upload-form{
+    min-width: 300px;
+}
 header {
     background: url(../images/header_bg.jpg);
         background-repeat: repeat;
@@ -130,6 +133,9 @@ nav {
 .inputs img {
     float: left;
 }
+.inputs .selected-images img{
+    float: none;
+}
 .inputs input {
     margin: 0px;
     height: 31px;
@@ -157,10 +163,11 @@ nav {
 }
 
 
-#title, #tab1, #tab2, #tab3, #tab4, #keimeno, #photo, #lawyerslist, #lawyer_2, #lawyer_3, #lawyer_4, #lawyer_5, #lawyer_6{
+#title, #tab1, #tab2, #tab3, #tab4, #keimeno, #photo, #lawyerslist, #lawyer_2, #lawyer_3, #lawyer_4, #lawyer_5, #lawyer_6, #exeidikeuseis, 
+#expertise_2, #expertise_3, #expertise_4, #expertise_5, #expertise_6, #expertise_7, #expertise_8, .publicationEdit{
     display: none;
 }
-.title, .metadata, .keimeno, .tab1, .tab2, .tab3, .tab4, .photo, .sub-butt, .lawyerslist{
+.title, .metadata, .keimeno, .tab1, .tab2, .tab3, .tab4, .photo, .sub-butt, .lawyerslist, .exeidikeuseis{
     cursor: pointer;
 }
 
@@ -182,18 +189,18 @@ nav {
 .textar .section-form {
     width: 100%;
 }
-#lawyerslist {
+#lawyerslist, #exeidikeuseis{
     background: white;
     padding: 0px 20px;
 }
 
-.lawyers {
+.lawyers, .expertises {
     display: inline-block;
 }
-.lawyers div {
+.lawyers div, .expertises div {
     float: left;
 }
-.lawyer_area {
+.lawyer_area, .expertise_area {
     background: #eaeaea;
     padding: 15px 20px;
 }
@@ -201,7 +208,7 @@ nav {
     display: inline-flex;
 }
 
-.lawyer-details .section-title {
+.lawyer-details .section-title, .expertise-details .section-title, .publicationEdit .section-title {
     width: 450px;
 }
 .first-sec {
@@ -211,7 +218,7 @@ nav {
 .sec-sec {
     max-width: 510px;
 }
-.lawyer-details .inputs input {
+.lawyer-details .inputs input,  .expertise-details .inputs input {
     min-width: 380px;
 }
 .section-title.expert {
@@ -223,13 +230,40 @@ nav {
 .section-form.english {
     margin-bottom: 20px;
 }
-.lawyer_area .actions {
+.lawyer_area .actions, .experise_area .actions {
     margin-bottom: 25px;
 }
-
-
-
-
-
-
-
+.publicationList div {
+    padding: 8px 35px;
+    color: black;
+}
+.buttons {
+    margin-top: 20px;
+    text-align: center;
+    border: 1px solid #677c6d;
+    color: #677c6d;
+    padding: 10px;
+    font-weight: bold;
+}
+#photo.multiple .inputs {
+    padding: 30px 73px;
+}
+#photo.multiple img {
+    width: 449px;
+    height: 286px;
+}
+.lawyer-details .selected-image {
+    width: 180px;
+    height: 180px;
+}
+.inputs.image {
+    display: inline-flex;
+}
+#photo.multiple .selected-image {
+    height: 286px;
+    width: 449px;
+}
+#dimosieuseis select {
+    width: 436px;
+    padding: 7px;
+}
