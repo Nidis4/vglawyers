@@ -1,0 +1,34 @@
+@charset "utf-8";
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+*:focus{outline:none;}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.w-form{position:absolute;top:70px;left:0px;  width:960px;height:390px;}
+	.w-form .explanatory{position:absolute;top:-50px;left:0px;width:960px;font-size:13px;text-align:center;color:#FFF;}
+	.w-form .label{margin:0 5px 0 0;color:#FFFFFF;}
+	.w-form .captchaimg{border:solid 1px #FFF;height:37px;}
+	.w-form .captchafield{width:76px;border:solid 1px #FFF;margin:0;padding:9px;font-size:16px;font-weight:bold;text-align:center;background:#EEEEEE;color:#5E5846;}
+	.w-form .ff-206{width:188px;height:30px;padding:0px 9px;border:none;background:url(../imgs/bg/ff/form_206_off.gif) left top no-repeat;font-size:13px;color:#FFF;}
+		.w-form .ff-206-selected{background:url(../imgs/bg/ff/form_206_on.gif) left top no-repeat;color:#5E5846;}		
+	.w-form .ff-848{width:830px;height:90px;padding:9px 9px;border:none;background:url(../imgs/bg/ff/form_848_off.gif) left top no-repeat;font-size:13px;resize:none;color:#FFF;}
+		.w-form .ff-848-selected{background:url(../imgs/bg/ff/form_848_on.gif) left top no-repeat;color:#5E5846;resize:none;}
+	.w-form .btn{position:absolute;bottom:0px;z-index:20;}
+	.w-form .btn-txt{position:absolute;padding-bottom:13px;width:150px;height:12px;padding-top:4px;color:#FFF;font-size:18px;text-align:center;z-index:10;}
+	.w-form .btn-bg-off{position:absolute;padding-bottom:20px;width:150px;height:16px;border-left:solid 1px #fff;border-right:solid 1px #fff;z-index:1;}
+	.w-form .btn-bg-on{background:#5E5846;}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.w-head .w .loginform{position:absolute;top:80px;right:0px;height:30px;width:560px;font-size:18px;text-align:right;background:url(../imgs/bg/transparent.png);}
+	.w-head .w .loginform span{font-size:18px;color:#666666;}
+	.w-head .w .loginform a{color:#666666;}
+	.w-head .w .loginform .login-mail-label{position:absolute;top:5px;left:5px;width:42px;text-align:right;}
+	.w-head .w .loginform .login-password-label{position:absolute;top:5px;left:230px;width:70px;text-align:right;}
+	.w-head .w .loginform .login-mail-field{position:absolute;top:3px;left:53px;width:152px;height:22px;border:solid 1px #990099;font-size:13px;padding:0 3px;}
+	.w-head .w .loginform .login-password-field{position:absolute;top:3px;left:306px;width:152px;height:22px;border:solid 1px #990099;font-size:13px;padding:0 3px;}
+	.w-head .w .loginform .login-password-reminder{position:absolute;top:-20px;left:308px;width:100px;text-align:left;font-size:11px;color:#666;}
+	.w-head .w .loginform .login-button{position:absolute;top:5px;right:0px;width:94px;text-align:center;}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.search-form{position:relative;left:10px;top:5px;width:240px;}
+	.search-form .column-ff{background:url(../imgs/bg/ff/column-field.jpg) center no-repeat;border:none;height:20px;width:149px;padding:5px 10px 5px 10px;font-size:16px;outline:none;}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.newsletter-form{position:relative;left:10px;top:5px;width:240px;}
+	.newsletter-form .column-ff{background:url(../imgs/bg/ff/column-field.jpg) center no-repeat;border:none;height:20px;width:149px;padding:5px 10px 5px 10px;font-size:16px;outline:none;}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/

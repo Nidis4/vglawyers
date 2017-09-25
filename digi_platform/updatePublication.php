@@ -1,0 +1,14 @@
+<?php
+include 'functions.php';
+
+$id = $_POST['id'];
+$title_el = $_POST['addtitle_el'];
+$title_en = $_POST['addtitle_en'];
+$media_el = $_POST['addmedia_el'];
+$media_en = $_POST['addmedia_en'];
+$lawyerid = $_POST['addlawyerid'];
+
+updatePublication($id, $title_el, $title_en, $media_el, $media_en, $lawyerid);
+
+echo "Publication Edited";
+?>
