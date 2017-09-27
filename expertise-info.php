@@ -5,13 +5,14 @@ require_once("inc.php");
 $r=@$_REQUEST;
 //------------------------------------------------------------------------------------------------------------------------------------------------------//
 	$sql="SELECT * FROM `expertise` WHERE `enabled`='1';";
-	$mysqli->query($sql);
-	$expertiseData=$mysqli->fetch_all();
+	//$mysqli->query($sql);
+	//$expertiseData=$mysqli->fetch_all();
+  $expertiseData = getExpertises();
 	//print_r($expertiseData);
 if($r['id']){
 	settype($r['id'], 'integer'); //SANITIZE INPUT!
-	$sql="SELECT * FROM `expertise` WHERE `id`='".$r['id']."';";
-	$selectedExpertiseData=$mysqli->fetchq($sql);
+	//$sql="SELECT * FROM `expertise` WHERE `id`='".$r['id']."';";
+	$selectedExpertiseData= getExpertise($r['id']);
 	//print_r($expertiseData);
 }
 //------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -96,7 +97,7 @@ $(document).ready(function(){
   	<div id="page-loader"><img src="imgs/preloader-inner.gif" alt="preloader" width="60" height="60" border="0" /></div> 
     <div class="expertise-info-txt-cont">
   		<div class="expertise-info-txt">
-        <div id="scrollable"><?=$selectedExpertiseData['txt_'.LANG]?></div>
+        <div id="scrollable"><?=$selectedExpertiseData['KEIMENO_EL']?></div>
       </div>
     </div>
     
@@ -120,7 +121,7 @@ $(document).ready(function(){
 					<?
         endif;
         ?>      
-        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=$expertiseData[0]['title_'.LANG]?></div>
+        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=getExpertiseTitle(1)?></div>
         <div class="effect" id="expert1"></div>
       </div>
       
@@ -138,7 +139,7 @@ $(document).ready(function(){
 					<?
         endif;
         ?>      
-        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=$expertiseData[1]['title_'.LANG]?></div>
+        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=getExpertiseTitle(2)?></div>
         <div class="effect" id="expert2"></div>
       </div>
       
@@ -156,7 +157,7 @@ $(document).ready(function(){
 					<?
         endif;
         ?>      
-        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=$expertiseData[2]['title_'.LANG]?></div>
+        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=getExpertiseTitle(3)?></div>
         <div class="effect" id="expert3"></div>
       </div>
       
@@ -174,7 +175,7 @@ $(document).ready(function(){
 					<?
         endif;
         ?>      
-        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=$expertiseData[3]['title_'.LANG]?></div>
+        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=getExpertiseTitle(4)?></div>
         <div class="effect" id="expert4"></div>
       </div>
       
@@ -192,7 +193,7 @@ $(document).ready(function(){
 					<?
         endif;
         ?>        
-        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=$expertiseData[4]['title_'.LANG]?></div>
+        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=getExpertiseTitle(5)?></div>
         <div class="effect" id="expert5"></div>
       </div>
       
@@ -210,7 +211,7 @@ $(document).ready(function(){
 					<?
         endif;
         ?>        
-        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=$expertiseData[5]['title_'.LANG]?></div>
+        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=getExpertiseTitle(6)?></div>
         <div class="effect" id="expert6"></div>
       </div>
       
@@ -228,7 +229,7 @@ $(document).ready(function(){
 					<?
         endif;
         ?>        
-        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=$expertiseData[6]['title_'.LANG]?></div>
+        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=getExpertiseTitle(7)?></div>
         <div class="effect" id="expert7"></div>
       </div>
       
@@ -246,7 +247,7 @@ $(document).ready(function(){
 					<?
         endif;
         ?>      
-        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=$expertiseData[7]['title_'.LANG]?></div>
+        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=getExpertiseTitle(8)?></div>
         <div class="effect" id="expert8"></div>
       </div>
       

@@ -2,10 +2,8 @@
 //------------------------------------------------------------------------------------------------------------------------------------------------------//
 require_once("inc.php");
 //------------------------------------------------------------------------------------------------------------------------------------------------------//
-$r=@$_REQUEST;
-	$sql="SELECT * FROM `lawyers` WHERE `enabled`='1';";
-	$mysqli->query($sql);
-	$lawyersData=$mysqli->fetch_all();
+	$r=@$_REQUEST;
+	$lawyersData=getLawyers();
 	//print_r($lawyersData);
 //------------------------------------------------------------------------------------------------------------------------------------------------------//
 ?>
@@ -73,26 +71,27 @@ $(document).ready(function(){
 	<div class="w">  
   	<div id="page-loader"><img src="imgs/preloader-inner.gif" alt="preloader" width="60" height="60" border="0" /></div>
     
-		<? /*
+		<? 
 		if(!empty($lawyersData)){
 			echo '<div class="lawyers-menu dn">
 							<ul class="no-mp no-lst ul">';
-			for($i=0;$i<count($lawyersData);$i++){
+			while ($lawyer = mysqli_fetch_array($lawyersData,MYSQLI_ASSOC)) {
+				$img = getImageLocByID($lawyer['LAWYER_ID']);
 				echo '<li>
-								<a href="lawyer-info.php?id='.$lawyersData[$i]['id'].'">
-									<img src="imgs/lawyers/'.$lawyersData[$i]['pic_small'].'" width="100" height="100" border="0" alt="" />
+								<a href="lawyer-info.php?id='.$lawyer['LAWYER_ID'].'">
+									<img src="/digi_platform/'.$img.'" width="100" height="100" border="0" alt="" />
 									<br />
-									<span class="webfont">'.$lawyersData[$i]['short_name_'.LANG].'</span>
+									<span class="webfont">'.$lawyer['NAME_EL'].'</span>
 								</a>
 							</li>';
 			}
 			echo '	</ul>
 						</div>';
 		}
-		*/ ?>
+	 ?>
   
   	
-<!--  	<div class="lawyers-menu">
+  	<!--<div class="lawyers-menu">
       <ul class="no-mp no-lst ul">
       	<li>
         	<a href="lawyer-info.php?id=1">
@@ -144,7 +143,7 @@ $(document).ready(function(){
           </a>
         </li>      
     	</ul>
-    </div>    
+    </div>   --> 
   	
     <div class="lawyers-txt-cont">
   		<div class="lawyers-txt">
@@ -157,13 +156,13 @@ $(document).ready(function(){
     	<img src="imgs/lawyers/lawyers.png" width="469" height="265" border="0" alt="" />
     </div>
   
-  	-->
+  	
   
-    <div class="lawyers-txt-cont">
+    <!-- <div class="lawyers-txt-cont">
   		<div class="lawyers-txt">
 				<div id="scrollable">Η σελίδα θα είναι σύντομα διαθέσιμη.</div>
       </div>     
-    </div>
+    </div>-->
 	</div>
   <img src="imgs/bg/gradients/lawyers-top.png" width="0" height="0" class="dn" alt="" />
   <img src="imgs/bg/gradients/left.png" width="0" height="0" class="dn" alt="" />

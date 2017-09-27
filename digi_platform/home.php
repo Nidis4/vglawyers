@@ -21,15 +21,24 @@ $metakey_en = $pageElements['METAKEY_EN'];
 $title_el = $pageElements['TITLE_EL'];
 $title_en = $pageElements['TITLE_EN'];
 $keimeno_el = $pageElements['KEIMENO_EL'];
+$keimeno_el = str_replace("<br />", "\n", $keimeno_el);
 $keimeno_en = $pageElements['KEIMENO_EN'];
 $tab1_el = $pageElements['TAB1_EL'];
+$tab1_el = str_replace("<br />", "\n", $tab1_el);
 $tab1_en = $pageElements['TAB1_EN'];
+$tab1_en = str_replace("<br />", "\n", $tab1_en);
 $tab2_el = $pageElements['TAB2_EL'];
+$tab2_el = str_replace("<br />", "\n", $tab2_el);
 $tab2_en = $pageElements['TAB2_EN'];
+$tab2_en = str_replace("<br />", "\n", $tab2_en);
 $tab3_el = $pageElements['TAB3_EL'];
+$tab3_el = str_replace("<br />", "\n", $tab3_el);
 $tab3_en = $pageElements['TAB3_EN'];
+$tab3_en = str_replace("<br />", "\n", $tab3_en);
 $tab4_el = $pageElements['TAB4_EL'];
+$tab4_el = str_replace("<br />", "\n", $tab4_el);
 $tab4_en = $pageElements['TAB4_EN'];
+$tab4_en = str_replace("<br />", "\n", $tab4_en);
 
 
 ?>

@@ -3,9 +3,9 @@
 require_once("inc.php");
 //------------------------------------------------------------------------------------------------------------------------------------------------------//
 $r=@$_REQUEST;
-	$sql="SELECT * FROM `expertise` WHERE `enabled`='1';";
-	$mysqli->query($sql);
-	$expertiseData=$mysqli->fetch_all();
+	//$sql="SELECT * FROM `expertise` WHERE `enabled`='1';";
+	//$mysqli->query($sql);
+	$expertiseData = getExpertises();
 	//print_r($expertiseData);
 //------------------------------------------------------------------------------------------------------------------------------------------------------//
 ?>
@@ -106,56 +106,56 @@ $(document).ready(function(){
     	<div class="fields-level-1" style="top:14px;height:75px;background:url(imgs/bg/gradients/expertise/exp1-2.png) center bottom no-repeat;">
       	<div style="height:74px;background:url(imgs/bg/gradients/expertise/exp1.png) center top no-repeat;"></div>
         <a id="explink1" href="expertise-info.php?id=1" style="height:74px;"></a> 
-        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=$expertiseData[0]['title_'.LANG]?></div>
+        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=getExpertiseTitle(1)?></div>
         <div class="effect" id="expert1"></div>
       </div>
       
     	<div class="fields-level-1" style="top:89px;height:75px;background:url(imgs/bg/gradients/expertise/exp2-3.png) center bottom no-repeat;">
       	<div style="height:74px;background:url(imgs/bg/gradients/expertise/exp2.png) center top no-repeat;"></div>
         <a id="explink2" href="expertise-info.php?id=2" style="height:74px;"></a>
-        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=$expertiseData[1]['title_'.LANG]?></div>
+        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=getExpertiseTitle(2)?></div>
         <div class="effect" id="expert2"></div>
       </div>
       
     	<div class="fields-level-1" style="top:164px;height:75px;background:url(imgs/bg/gradients/expertise/exp3-4.png) center bottom no-repeat;">
       	<div style="height:74px;background:url(imgs/bg/gradients/expertise/exp3.png) center top no-repeat;"></div>
         <a id="explink3" href="expertise-info.php?id=3" style="height:74px;"></a>
-        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=$expertiseData[2]['title_'.LANG]?></div>
+        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=getExpertiseTitle(3)?></div>
         <div class="effect" id="expert3"></div>
       </div>
       
     	<div class="fields-level-1" style="top:239px;height:75px;background:url(imgs/bg/gradients/expertise/exp4-5.png) center bottom no-repeat;">
       	<div style="height:74px;background:url(imgs/bg/gradients/expertise/exp4.png) center top no-repeat;"></div>
         <a id="explink4" href="expertise-info.php?id=4" style="height:74px;"></a>
-        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=$expertiseData[3]['title_'.LANG]?></div>
+        <div class="txt" style="height:41px;padding:17px 0 17px 0;"><?=getExpertiseTitle(4)?></div>
         <div class="effect" id="expert4"></div>
       </div>
       
     	<div class="fields-level-1" style="top:314px;height:51px;background:url(imgs/bg/gradients/expertise/exp5-6.png) center bottom no-repeat;">
       	<div style="height:50px;background:url(imgs/bg/gradients/expertise/exp5.png) center top no-repeat;"></div>
         <a id="explink5" href="expertise-info.php?id=5" style="height:50px;"></a>
-        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=$expertiseData[4]['title_'.LANG]?></div>
+        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=getExpertiseTitle(5)?></div>
         <div class="effect" id="expert5"></div>
       </div>
       
     	<div class="fields-level-1" style="top:365px;height:51px;background:url(imgs/bg/gradients/expertise/exp6-7.png) center bottom no-repeat;">
       	<div style="height:50px;background:url(imgs/bg/gradients/expertise/exp6.png) center top no-repeat;"></div>
         <a id="explink6" href="expertise-info.php?id=6" style="height:50px;"></a>
-        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=$expertiseData[5]['title_'.LANG]?></div>
+        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=getExpertiseTitle(6)?></div>
         <div class="effect" id="expert6"></div>
       </div>
       
     	<div class="fields-level-1" style="top:416px;height:51px;background:url(imgs/bg/gradients/expertise/exp7-8.png) center bottom no-repeat;">
       	<div style="height:50px;background:url(imgs/bg/gradients/expertise/exp7.png) center top no-repeat;"></div>
         <a id="explink7" href="expertise-info.php?id=7" style="height:50px;"></a>
-        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=$expertiseData[6]['title_'.LANG]?></div>
+        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=getExpertiseTitle(7)?></div>
         <div class="effect" id="expert7"></div>
       </div>
       
     	<div class="fields-level-1" style="top:467px;height:51px;background:url(imgs/bg/gradients/expertise/exp8-9.png) center bottom no-repeat;">
       	<div style="height:50px;background:url(imgs/bg/gradients/expertise/exp8.png) center top no-repeat;"></div>
         <a id="explink8" href="expertise-info.php?id=8" style="height:50px;"></a>
-        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=$expertiseData[7]['title_'.LANG]?></div>
+        <div class="txt" style="height:17px;padding:15px 0 18px 0;"><?=getExpertiseTitle(8)?></div>
         <div class="effect" id="expert8"></div>
       </div>
       

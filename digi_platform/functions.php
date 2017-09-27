@@ -9,7 +9,6 @@
 	function getPageElements($page){
 		$connect = initDB();
 		$result = mysqli_query($connect,"SELECT * FROM `PAGES` WHERE `PAGE_ID` LIKE '$page'");
-		//echo "SELECT * FROM `PAGES` WHERE `PAGE_ID` LIKE $page";
 		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 		return $row;
 	}
@@ -23,6 +22,8 @@
 
 	function updateLawyer($id, $name_el, $name_en, $surname_el, $surname_en, $email, $cv_el, $cv_en, $expert1_el, $expert1_en, $expert2_el, $expert2_en, $expert3_el, $expert3_en, $expert4_el, $expert4_en, $metatitle_el, $metatitle_en, $metadesc_el, $metadesc_en, $metakey_el, $metakey_en, $title_el, $title_en){
 		$connect = initDB();
+		$cv_el = mysqli_real_escape_string($connect, $cv_el);
+		$cv_en = mysqli_real_escape_string($connect, $cv_en);
 		mysqli_query($connect,"UPDATE `LAWYERS` SET `NAME_EL`='$name_el',`NAME_EN`='$name_en',`SURNAME_EL`='$surname_el',`SURNAME_EN`='$surname_en',`EMAIL`='$email',`CV_EL`='$cv_el',`CV_EN`='$cv_en',`EXPERT1_EL`='$expert1_el',`EXPERT1_EN`='$expert1_en',`EXPERT2_EL`='$expert2_el',`EXPERT2_EN`='$expert2_en',`EXPERT3_EL`='$expert3_el',`EXPERT3_EN`='$expert3_en',`EXPERT4_EL`='$expert4_el',`EXPERT4_EN`='$expert4_en',`METATITLE_EL`='$metatitle_el',`METATITLE_EN`='$metatitle_en',`METADESC_EL`='$metadesc_el',`METADESC_EN`='$metadesc_en',`METAKEY_EL`='$metakey_el',`METAKEY_EN`='$metakey_en',`TITLE_EL`='$title_el',`TITLE_EN`='$title_en' WHERE `LAWYER_ID` = '$id' ");
 	}
 

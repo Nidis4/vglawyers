@@ -155,7 +155,7 @@ $(document).ready(function() {
       <div id="wIndexTxt" style="position:absolute;right:0;top:51px; width:449px; height:120px; background:#919076;">
         <table width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td height="120" align="left" valign="middle"><p id="op-txt" style="padding:5px 10px;color:#FAFAFA;">&nbsp;</p></td>
+            <td height="120" align="left" valign="middle"><p id="op-txt" style="padding:5px 10px;color:#FAFAFA; font-size: 13px">&nbsp;</p></td>
           </tr>
         </table>
       </div>

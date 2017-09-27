@@ -21,6 +21,7 @@ $metakey_en = $pageElements['METAKEY_EN'];
 $title_el = $pageElements['TITLE_EL'];
 $title_en = $pageElements['TITLE_EN'];
 $keimeno_el = $pageElements['KEIMENO_EL'];
+$keimeno_el = str_replace("<br />", "\n", $keimeno_el);
 $keimeno_en = $pageElements['KEIMENO_EN'];
 $tab1_el = $pageElements['TAB1_EL'];
 $tab1_en = $pageElements['TAB1_EN'];

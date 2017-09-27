@@ -3,21 +3,21 @@
 require_once("inc.php");
 //------------------------------------------------------------------------------------------------------------------------------------------------------//
 $r=@$_REQUEST;
-	$sql="SELECT * FROM `lawyers` WHERE `enabled`='1';";
-	$mysqli->query($sql);
-	$lawyersData=$mysqli->fetch_all();
+	//$sql="SELECT * FROM `lawyers` WHERE `enabled`='1';";
+	//$mysqli->query($sql);
+	//$lawyersData=$mysqli->fetch_all();
+	$lawyersData=getLawyers();
 	//print_r($lawyersData);
 if($r['id']){
 	settype($r['id'], 'integer'); //SANITIZE INPUT!
-	$sql="SELECT * FROM `lawyers` WHERE `id`='".$r['id']."';";
-	$lawyerData=$mysqli->fetchq($sql);
+	$lawyerData=getLawyer($r['id']);
 	//print_r($lawyerData);
-	
+	$imgCur = getImageLocByID($lawyerData['LAWYER_ID']);
 	// Get the areas of expertise for each lawyer...
 	settype($r['id'], 'integer'); //SANITIZE INPUT!
-	$sql="SELECT * FROM `lawyer_expertise` WHERE `lawyer_id`='".$r['id']."' ORDER BY `order` ASC;";
-	$mysqli->query($sql);
-	$lawyerExpertiseData=$mysqli->fetch_all();
+	//$sql="SELECT * FROM `lawyer_expertise` WHERE `lawyer_id`='".$r['id']."' ORDER BY `order` ASC;";
+	//$mysqli->query($sql);
+	//$lawyerExpertiseData=$mysqli->fetch_all();
 }
 //------------------------------------------------------------------------------------------------------------------------------------------------------//
 ?>
@@ -120,50 +120,51 @@ $(document).ready(function(){
 	<div class="bg"></div>
 	<div class="w">
   	<div id="page-loader"><img src="imgs/preloader-inner.gif" alt="preloader" width="60" height="60" border="0" /></div>
-    <?
+    <? 
 		if(!empty($lawyersData)){
-			echo '<div class="lawyer-menu dn">
+			echo '<div class="lawyers-menu dn">
 							<ul class="no-mp no-lst ul">';
-			for($i=0;$i<count($lawyersData);$i++){
+			while ($lawyer = mysqli_fetch_array($lawyersData,MYSQLI_ASSOC)) {
+				$img = getImageLocByID($lawyer['LAWYER_ID']);
 				echo '<li>
-								<a href="lawyer-info.php?id='.$lawyersData[$i]['id'].'">
-									<img src="imgs/lawyers/'.$lawyersData[$i]['pic_small'].'" width="100" height="100" border="0" alt="" />
+								<a href="lawyer-info.php?id='.$lawyer['LAWYER_ID'].'">
+									<img src="/digi_platform/'.$img.'" width="100" height="100" border="0" alt="" />
 									<br />
-									<span class="webfont">'.$lawyersData[$i]['short_name_'.LANG].'</span>
+									<span class="webfont">'.$lawyer['NAME_EL'].'</span>
 								</a>
 							</li>';
 			}
 			echo '	</ul>
 						</div>';
 		}
-		?>
+	 ?>
   	
     <div class="lawyer-cv">
   		<div class="cv-txt">
-        <div id="scrollable"><?=$lawyerData['txt_'.LANG]?></div>
+        <div id="scrollable"><?=$lawyerData['CV_EL']?></div>
       </div>     
     </div>  	
-  	<img src="imgs/lawyers/<?=$lawyerData['pic_medium']?>" width="180" height="180" border="0" alt="" class="lawyer-img-small" />
+  	<img src="/digi_platform/<?=$imgCur?>" width="180" height="180" border="0" alt="" class="lawyer-img-small" />
 
 
 		<?
-    if(!empty($lawyerExpertiseData)){
       echo '<div class="expertise">
-							<div class="expertise-title"><span class="webfont">'.$lawyerData['name_'.LANG].'</span></div>
+							<div class="expertise-title"><span class="webfont">'.$lawyerData['NAME_EL'].' '.$lawyerData['SURNAME_EL'].'</span></div>
 							<div class="expertise-fields">';
-      foreach($lawyerExpertiseData as $k=>$v){
-        echo '<span class="webfont">'.$v['expertise_'.LANG].'</span>'.(count($lawyerExpertiseData)!=($k+1)?'<br />':'');
-      }
+      
+        echo '<span class="webfont">'.$lawyerData['EXPERT1_EL'].'</span><br />';
+        echo '<span class="webfont">'.$lawyerData['EXPERT2_EL'].'</span><br />';
+        echo '<span class="webfont">'.$lawyerData['EXPERT3_EL'].'</span><br />';
+		echo '<span class="webfont">'.$lawyerData['EXPERT4_EL'].'</span><br />';
+   
       echo '	</div>';
-    }
     
-    if(!empty($lawyerData['email'])){
-      echo '<div class="expertise-mail"><span><a class="webfont" href="mailto:'.$lawyerData['email'].'">'.$lawyerData['email'].'</a></span></div>';
+    if(!empty($lawyerData['EMAIL'])){
+      echo '<div class="expertise-mail"><span><a class="webfont" href="mailto:'.$lawyerData['EMAIL'].'">'.$lawyerData['EMAIL'].'</a></span></div>';
     }
 		
-		if(!empty($lawyerExpertiseData)){
 			 echo '</div>';
-		}
+
     ?>      
 	
   </div>

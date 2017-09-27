@@ -261,8 +261,8 @@ while ($expertise = mysqli_fetch_array($expertises,MYSQLI_ASSOC)) {
 					echo "<div class='section-title expert'>To κυρίως κείμενο της συγκεκριμένης εξειδίκευσης</div>";
 					echo "<div class='section-form'>";
 					echo "<div class='inputs'>";
-					echo "<div class='greek'><img src='images/flag_el.jpg' /><textarea col=20 name='keimeno_el' id='keimeno_el'>$lkeimeno_el[$i]</textarea></div>";
-					echo "<div class='english'><img src='images/flag_en.jpg' /><textarea col=20 name='keimeno_en' id='keimeno_en'>$lkeimeno_en[$i]</textarea></div>";
+					echo "<div class='greek'><img src='images/flag_el.jpg' /><textarea col=20 name='keimeno_el_".$i."' id='keimeno_el_".$i."'>$lkeimeno_el[$i]</textarea></div>";
+					echo "<div class='english'><img src='images/flag_en.jpg' /><textarea col=20 name='keimeno_en_".$i."' id='keimeno_en_".$i."'>$lkeimeno_en[$i]</textarea></div>";
 					echo "</div>";
 					echo "</div>";
 					echo "</div>";
